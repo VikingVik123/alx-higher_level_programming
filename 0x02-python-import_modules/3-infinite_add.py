@@ -7,7 +7,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         # Summing all command-line arguments
         result = sum(int(arg) for arg in sys.argv[1:])
-        
+
         # Printing the result
         print(result)
     else:
