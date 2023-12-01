@@ -3,16 +3,18 @@
 if __name__ == "__main__":
     import sys
 
-    # Get the number of arguments
-    num_arguments = len(sys.argv) - 1  # Subtract 1 to exclude the script name
+    i = len(sys.argv) - 1
 
-    # Print the number of arguments and their list
-    if num_arguments == 0:
-        print("Number of argument(s): 0.")
-    elif num_arguments == 1:
-        print("Number of argument(s): 1.")
-        print("1: {}".format(sys.argv[1]))
+    if i == 0:
+        print("{} arguments.".format(i))
+    elif i == 1:
+        print("{} argument:".format(i))
     else:
-        print("Number of argument(s): {}.".format(num_arguments))
-        for i in range(1, num_arguments + 1):
-            print("{}: {}".format(i, sys.argv[i]))
+        print("{} arguments:".format(i))
+
+    if i >= 1:
+        i = 0
+        for arg in sys.argv:
+            if i != 0:
+                print("{}: {}".format(i, arg))
+            i += 1
