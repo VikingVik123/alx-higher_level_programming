@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-	if maxtrix[] == 0
-		return none
-
-	else:
-		new_matrix[] = [row * 2 for row in matrix]
-		return new_matrix
+    new_matrix = []
+    for row in matrix:
+        new_row = []
+        for element in row:
+            new_row.append(element ** 2)
+        new_matrix.append(new_row)
+    return new_matrix
