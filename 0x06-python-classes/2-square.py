@@ -3,6 +3,11 @@
 class Square:
     def__init__(self, size=0):
         """object initialization"""
+        """Initialize a new Square.
+
+        Args:
+            size (int): The size of the new square.
+        """
         if size < 0:
             """condition to ensure non - value"""
             ValueError('size must be >= 0')
@@ -12,5 +17,4 @@ class Square:
             TypeError('size must be an integer')
 
         else:
-            self.__size = size #size of square
-
+            self.__size = size
