@@ -1,20 +1,18 @@
 #!/usr/bin/python3
-"""Class with initialization and some conditions"""
+""" class Square that defines a square"""
+
+
 class Square:
-    def__init__(self, size=0):
-        """object initialization"""
-        """Initialize a new Square.
+    """ class Square that defines a square"""
 
+    def __init__(self, size=0):
+        """initialize square
         Args:
-            size (int): The size of the new square.
+            size (int): size of the square
         """
-        if size < 0:
-            """condition to ensure non - value"""
-            ValueError('size must be >= 0')
-
-        elif type(size) is not int:
-            """condition 2 ensure int value"""
-            TypeError('size must be an integer')
-
+        if type(size) is not int:
+            raise TypeError('size must be an integer')
+        elif size < 0:
+            raise ValueError('size must be >= 0')
         else:
-            self.__size = size
+            self.__size = size  #: size of the square
