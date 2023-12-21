@@ -2,12 +2,15 @@
 """Class with initialization and some conditions"""
 class Square:
     def__init__(self, size=0):
+        """object initialization"""
         if size < 0:
+            """condition to ensure non - value"""
             ValueError('size must be >= 0')
 
         elif type(size) is not int:
+            """condition 2 ensure int value"""
             TypeError('size must be an integer')
 
         else:
-            self.__size = size
+            self.__size = size #size of square
 
