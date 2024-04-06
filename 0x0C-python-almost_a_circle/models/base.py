@@ -3,8 +3,8 @@
 import json
 
 class Base:
-    """Base model.
 
+    """Base model.
     This class represents the blueprint for all other classes in project 0x0C*.
 
     Private Class Attribute:
@@ -48,7 +48,7 @@ class Base:
         filename = f"{cls.__name__}.json"
         with open(filename, 'w') as file:
             file.write(cls.to_json_string([obj.to_dictionary() for obj in list_objs]))
-    
+
     @staticmethod
     def from_json_string(json_string):
         """

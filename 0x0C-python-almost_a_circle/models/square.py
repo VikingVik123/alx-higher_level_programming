@@ -3,6 +3,7 @@ from models.rectangle import Rectangle
 """
 Defines a class Square
 """
+
 class Square(Rectangle):
     """
     Created a class square

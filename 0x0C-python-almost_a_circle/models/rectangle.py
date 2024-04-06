@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-from models.base import Base
 """
 Defines a class Rectangle
 """
+from models.base import Base
+
+
 class Rectangle(Base):
+
     """
     Creates a class Rectangle
     """
@@ -25,7 +28,8 @@ class Rectangle(Base):
 
         super().__init__(id)
 
-        """Assign each argument width, height, x, and y to the right attribute"""
+        """Assign each argument width, height, x,
+        and y to the right attribute"""
         self.width = width
         self.height = height
         self.x = x
@@ -87,14 +91,14 @@ class Rectangle(Base):
     def area(self):
         """Func to calc area"""
         return self.height * self.width
-    
+
     def display(self):
         """ adds the display func"""
         for _ in range(self.y):
             print()
         for _ in range(self.height):
             print(" " * self.x + "#" * self.width)
-    
+
     def update(self, *args, **kwargs):
         """ updates values with user input
             Args:
@@ -120,7 +124,6 @@ class Rectangle(Base):
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-
 
     def to_dictionary(self):
         """returns the dict rep of the rectangle"""
