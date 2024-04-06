@@ -2,8 +2,8 @@
 """Defines a base model class."""
 import json
 
-class Base:
 
+class Base:
     """Base model.
     This class represents the blueprint for all other classes in project 0x0C*.
 
