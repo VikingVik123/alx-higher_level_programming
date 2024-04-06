@@ -63,3 +63,33 @@ class Base:
         if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
+
+    def __str__(self):
+        """
+        Returns string representation of the rectangle.
+        """
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+
+    def display(self):
+        """
+        Prints the Rectangle instance with '#' character considering x and y.
+        """
+        print("\n" * self.y, end="")
+        for i in range(self.height):
+            print(" " * self.x, end="")
+            print("#" * self.width)
+
+    def update(self, *args, **kwargs):
+        """
+        Assigns key/value arguments to attributes.
+        Args:
+            *args: Non-keyworded arguments. Ignored if **kwargs is present.
+            **kwargs: Keyworded arguments representing attribute-value pairs.
+        """
+        if args:
+            attrs = ["id", "width", "height", "x", "y"]
+            for i, arg in enumerate(args):
+                setattr(self, attrs[i], arg)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
