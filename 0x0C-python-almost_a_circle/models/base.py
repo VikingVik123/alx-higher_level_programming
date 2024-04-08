@@ -93,3 +93,23 @@ class Base:
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Returns an instance with all attributes already set.
+
+        Args:
+            dictionary: A dictionary representing attributes and their values.
+        Returns:
+            An instance of the class with attributes set based on the dictionary.
+        """
+        if cls.__name__ == 'Rectangle':
+            dummy = cls(1, 1)  # Creating a dummy Rectangle instance
+        elif cls.__name__ == 'Square':
+            dummy = cls(1)  # Creating a dummy Square instance
+        else:
+            raise ValueError("Unsupported class type")
+
+        dummy.update(**dictionary)  # Update dummy instance with dictionary
+        return dummy
