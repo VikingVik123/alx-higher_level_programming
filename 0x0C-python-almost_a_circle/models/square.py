@@ -42,6 +42,7 @@ class Square(Rectangle):
             'y': self.y
         }
     def update(self, *args, **kwargs):
+        """updates the square with arguments"""
         if args:
             if len(args) >= 1:
                 self.id = args[0]
