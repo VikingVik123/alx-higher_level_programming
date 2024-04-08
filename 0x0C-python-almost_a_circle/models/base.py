@@ -2,6 +2,7 @@
 """Defines a base model class."""
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -167,3 +168,42 @@ class Base:
                 elif cls.__name__ == 'Square':
                     instances.append(cls.create(id=int(row[0]), size=int(row[1]), x=int(row[2]), y=int(row[3])))
         return instances
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        # Set up the window
+        window = turtle.Screen()
+        window.title("Rectangles and Squares")
+
+        # Create a turtle object
+        pen = turtle.Turtle()
+
+        # Draw rectangles
+        pen.color("blue")
+        pen.penup()
+        for rect in list_rectangles:
+            pen.goto(rect.x, rect.y)
+            pen.pendown()
+            pen.forward(rect.width)
+            pen.left(90)
+            pen.forward(rect.height)
+            pen.left(90)
+            pen.forward(rect.width)
+            pen.left(90)
+            pen.forward(rect.height)
+            pen.left(90)
+            pen.penup()
+
+        # Draw squares
+        pen.color("red")
+        pen.penup()
+        for square in list_squares:
+            pen.goto(square.x, square.y)
+            pen.pendown()
+            for _ in range(4):
+                pen.forward(square.size)
+                pen.left(90)
+            pen.penup()
+
+        # Close the window on click
+        window.mainloop()
