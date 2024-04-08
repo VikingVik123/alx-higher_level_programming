@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a base model class."""
 import json
+import csv
 
 
 class Base:
@@ -129,3 +130,40 @@ class Base:
                 return [cls.create(**item) for item in data]
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        Serializes a list of objects and writes to a CSV file.
+
+        Args:
+            list_objs: A list of inherited Base instances.
+        """
+        filename = f"{cls.__name__}.csv"
+        with open(filename, 'w', newline='') as csvfile:
+            writer = csv.writer(csvfile)
+            if cls.__name__ == 'Rectangle':
+                for obj in list_objs:
+                    writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+            elif cls.__name__ == 'Square':
+                for obj in list_objs:
+                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Deserializes objects from a CSV file and returns a list of instances.
+
+        Returns:
+            A list of instances loaded from the CSV file.
+        """
+        filename = f"{cls.__name__}.csv"
+        instances = []
+        with open(filename, 'r', newline='') as csvfile:
+            reader = csv.reader(csvfile)
+            for row in reader:
+                if cls.__name__ == 'Rectangle':
+                    instances.append(cls.create(id=int(row[0]), width=int(row[1]), height=int(row[2]), x=int(row[3]), y=int(row[4])))
+                elif cls.__name__ == 'Square':
+                    instances.append(cls.create(id=int(row[0]), size=int(row[1]), x=int(row[2]), y=int(row[3])))
+        return instances
