@@ -8,6 +8,7 @@ Script to
 """
 import urllib.request
 
+
 def fetch_info(url):
     try:
         with urllib.request.urlopen(url) as response:

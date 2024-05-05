@@ -9,6 +9,7 @@ script to
 import sys
 import urllib.request
 
+
 def fetch_request_id(url):
     try:
         with urllib.request.urlopen(url) as response:

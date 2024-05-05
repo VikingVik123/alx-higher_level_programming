@@ -11,6 +11,7 @@ import urllib.parse
 import urllib.request
 import sys
 
+
 def fetch_email(url, email):
     try:
         data = urllib.parse.urlencode({'email': email}).encode('utf-8')
