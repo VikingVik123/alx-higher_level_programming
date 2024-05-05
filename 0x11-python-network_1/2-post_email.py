@@ -1,10 +1,15 @@
 #!/usr/bin/python3
 # Script to fetch the mail address
+"""
+script to
+- take in a URL
+- take email as a parameter
+- display the body of the response
+"""
 
 import urllib.parse
 import urllib.request
 import sys
-
 
 def fetch_email(url, email):
     try:

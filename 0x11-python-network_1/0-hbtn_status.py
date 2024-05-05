@@ -1,8 +1,12 @@
 #!/usr/bin/python3
 # script that fetches data from given url
 
+"""
+Script to
+- fetche https://alx-intranet.hbtn.io/status.
+- uses urlib package
+"""
 import urllib.request
-
 
 def fetch_info(url):
     try:

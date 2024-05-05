@@ -1,9 +1,13 @@
 #!/usr/bin/python3
 # Script to return the url response header
+"""
+script to
+- take in a URL,
+- send a request to the URL and display the value
+"""
 
 import sys
 import urllib.request
-
 
 def fetch_request_id(url):
     try:
