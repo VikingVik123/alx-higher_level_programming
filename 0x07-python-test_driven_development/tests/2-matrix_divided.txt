@@ -1,0 +1,32 @@
+======
+Test file for matrix function
+======
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> print("Function imported successfully")
+
+>>> matrix = [
+...    [4, 8, 12],
+...    [16, 20, 24]
+... ]
+
+>>> div = 4
+>>> print(matrix_divided(matrix, div))
+[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+>>> matrix = [
+...    [2.5, 5.0, 7.5],
+...    [10.0, 12.5, 15.0]
+... ]
+
+>>> div = 2.5
+>>> print(matrix_divided(matrix, div))
+[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+>>> matrix = [
+...    [1, 2, 3],
+...    [4, 5, 6]
+... ]
+>>> div = 2.0
+>>> print(matrix_divided(matrix, div))
+[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
