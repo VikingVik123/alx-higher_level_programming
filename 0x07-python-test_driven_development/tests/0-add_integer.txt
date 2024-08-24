@@ -1,0 +1,21 @@
+=========
+Explains the add function defined by 0-add_integer.txt
+=========
+
+import the function
+>>> add_integer = __import__('0-add_integer').add_integer
+
+usage
+
+>>> add_integer(1, 2)
+3
+>>> add_integer(100, -2)
+98
+>>> add_integer(2)
+100
+>>> add_integer(100.3, -2)
+98.3
+>>> add_integer(4, "School")
+TypeError: b must be an integer
+>>> add_integer(None)
+must put values
