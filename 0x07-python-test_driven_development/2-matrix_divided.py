@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+"""
+Function 4 matrix division
+"""
+
+
 def matrix_divided(matrix, div):
     """
     function initialization
